@@ -1,0 +1,38 @@
+{
+  "name": "ado-workitem-generator",
+  "displayName": "ADO Work Item Generator",
+  "description": "VS Code Chat Participant that generates Azure DevOps work items from change requests using GitHub Copilot",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Chat"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "ado-workitem",
+        "name": "ado-workitem",
+        "description": "Generate Azure DevOps EPICs and User Stories from change requests",
+        "isSticky": true
+      }
+    ],
+    "commands": [
+      {
+        "command": "ado-workitem-generator.downloadCsv",
+        "title": "Download Work Items CSV"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "dependencies": {
+    "@langchain/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0"
+  }
+}
